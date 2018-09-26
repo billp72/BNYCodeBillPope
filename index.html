@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photos</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style type="text/css">
+    tbody tr:nth-child(odd){background-color: #f3f3f3;}
+    tbody td, thead th{
+      padding: 8px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="table.js"></script>
+  <script id="template" type="x-tmpl-mustache">
+    <table>
+       <thead>
+        <th></th>
+        <th>#</th>
+        {{#headers}}
+          <th class="sort">{{label}}</th>
+        {{/headers}}
+      </thead>
+      <tbody>
+        {{#rows}}
+          <tr class="parent">
+           <td class="click">+</td>
+           <td>{{index}}</td>
+           {{#.}}
+            <td>{{value}}</td>
+           {{/.}}
+        {{/rows}}
+      </tbody>
+   </table>
+  </script>
+</head>
+<body>
+</body>
+</html>
